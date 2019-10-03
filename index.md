@@ -15,7 +15,7 @@ Face features is my current ongoing project which aims on taking out facial feat
 # My Upcoming Repos/Work 
 
 1. OpenCV Best Practices
-2. My Approch on learning Deep Learning and Machine Learning.
+2. My approch on learning Deep Learning and Machine Learning.
 3. OpenCV must have projects
 
 ```
