@@ -1,6 +1,6 @@
 ## Welcome to ajaymin28's OpenSource GitHub.
 
-I'm Computer Engineer, On my way to research Computer Vision and Deep Learning to help Humanity.
+I'm a Computer Engineer, on my way to research Computer Vision and Deep Learning to help Humanity.
 
 ### [Aruco Python](https://github.com/ajaymin28/Aruco_python)
 
