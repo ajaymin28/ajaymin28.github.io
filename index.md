@@ -7,8 +7,6 @@ I'm a Computer Engineer, on my way to research Computer Vision and Deep Learning
 Aruco Python is biding for Aruco C++ library available in OpenCV, there are no such clear documents available to code aruco in python so made it avaialable for people.
 
 ```markdown
-Syntax highlighted code block
-
 # My Upcoming Repos/Work 
 
 1. OpenCV Best Practices
