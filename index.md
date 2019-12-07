@@ -2,6 +2,12 @@
 
 I'm a Computer Engineer, on my way to research Computer Vision and Deep Learning to help Humanity.
 
+### [Adavanced Computer Vision using OpenCV Python](https://github.com/ajaymin28/Advanced-Computer-Vision-using-OpenCV-Python)
+
+Advanced Computer Vision using OpenCV Python is a course designed by me, to share my 1.5+ years experience with OpenCV Python, Deep Learning and Machine Learning.
+
+You can find video tutorials here : [Link](https://www.youtube.com/playlist?list=PLwRoxHWReaEhVFjTeKlifKUimbw6ZyV7K)
+
 ### [Aruco Python](https://github.com/ajaymin28/Aruco_python)
 
 Aruco Python is biding for Aruco C++ library available in OpenCV, there are no such clear documents available to code aruco in python so made it avaialable for people.
