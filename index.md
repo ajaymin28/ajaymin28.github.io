@@ -10,7 +10,7 @@ You can find video tutorials here :
 1. [Introduction opencv python](https://www.youtube.com/playlist?list=PLwRoxHWReaEhVFjTeKlifKUimbw6ZyV7K)
 2. [Basic Image Processing using OpenCV Python](https://www.youtube.com/playlist?list=PLwRoxHWReaEhVFjTeKlifKUimbw6ZyV7K)
 
-Source code can be found by clicking on Adavanced Computer Vision using OpenCV Python.
+Source code can be found [here](https://github.com/ajaymin28/Advanced-Computer-Vision-using-OpenCV-Python)
 
 ### [Aruco Python](https://github.com/ajaymin28/Aruco_python)
 
