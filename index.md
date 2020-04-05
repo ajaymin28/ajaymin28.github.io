@@ -14,7 +14,7 @@ Source code can be found [here](https://github.com/ajaymin28/Advanced-Computer-V
 
 ### [Aruco Python](https://github.com/ajaymin28/Aruco_python)
 
-Aruco Python is biding for Aruco C++ library available in OpenCV, there are no such clear documents available to code aruco in python so made it avaialable for people.
+Aruco Python is biding for Aruco C++ library available in OpenCV.
 
 ### [Face Features](https://face-features.herokuapp.com/)
 
