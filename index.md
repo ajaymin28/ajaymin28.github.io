@@ -14,8 +14,8 @@ Source code can be found [here](https://github.com/ajaymin28/Advanced-Computer-V
 
 ### [2. RaspberryPi3 Headless Setup](https://www.youtube.com/playlist?list=PLwRoxHWReaEj30e1XPHCDIwTnX-9c1rP-)
 
-1. [Instagram Stories Instructions] (https://www.instagram.com/stories/highlights/18084119950173813/)
-2. [YouTube Video Instructions] (https://www.youtube.com/playlist?list=PLwRoxHWReaEj30e1XPHCDIwTnX-9c1rP-)
+1. [Instagram Stories Instructions](https://www.instagram.com/stories/highlights/18084119950173813/)
+2. [YouTube Video Instructions](https://www.youtube.com/playlist?list=PLwRoxHWReaEj30e1XPHCDIwTnX-9c1rP-)
 
 ### [3. Aruco Python](https://github.com/ajaymin28/Aruco_python)
 
