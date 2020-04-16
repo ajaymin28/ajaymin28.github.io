@@ -12,6 +12,11 @@ You can find video tutorials here :
 
 Source code can be found [here](https://github.com/ajaymin28/Advanced-Computer-Vision-using-OpenCV-Python)
 
+### [RaspberryPi3 Headless Setup]
+
+1. Instagram Stories Instructions (https://www.instagram.com/stories/highlights/18084119950173813/)
+2. YouTube Video Instructions (https://www.youtube.com/playlist?list=PLwRoxHWReaEj30e1XPHCDIwTnX-9c1rP-)
+
 ### [Aruco Python](https://github.com/ajaymin28/Aruco_python)
 
 Aruco Python is binding for Aruco C++ library available in OpenCV.
