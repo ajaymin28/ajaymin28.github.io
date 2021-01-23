@@ -2,9 +2,9 @@
 
 I'm a Computer Engineer, on my way to research Computer Vision and Deep Learning to help Humanity.
 
-### 1. [Edge Device Computing, When to use GPU/TPU/DSP](https://cvforeveryone28.blogspot.com/2021/01/the-era-of-edge-computing-utilizing.html)
+### 1. [Edge Device Computing, When to use GPU/TPU/DSP?](https://cvforeveryone28.blogspot.com/2021/01/the-era-of-edge-computing-utilizing.html)
 
-This blog talks about when to utilize which device based on your model and suported ops of your device. A bit of advice/tips from my experice.
+This blog talks about when to utilize which device, based on your model and suported ops of your device. A bit of advice/tips from my experice.
 
 ### 2. [Adavanced Computer Vision using OpenCV Python](https://github.com/ajaymin28/Advanced-Computer-Vision-using-OpenCV-Python)
 
