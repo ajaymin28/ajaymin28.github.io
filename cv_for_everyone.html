@@ -1,268 +1,289 @@
-<!DOCTYPE HTML>
-<!--
-	Miniport by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>cv_for_everyone</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="assets/css/user-style.css" />
-		<!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
-		<link rel="stylesheet" href="assets/css/icofont/icofont.css" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>cv_for_everyone | Computer Vision Hub</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        :root {
+            --bg-color: #f5f5f5;
+            --text-color: #333;
+            --card-bg: #fff;
+            --card-shadow: rgba(0,0,0,0.1);
+            --nav-bg: #1a1a1a;
+            --nav-text: #fff;
+            --hero-bg: #007bff;
+            --hero-text: #fff;
+            --button-bg: #007bff;
+            --button-hover: #0056b3;
+            --link-bg: #e0e0e0;
+            --link-hover: #d0d0d0;
+            --footer-bg: #1a1a1a;
+            --footer-text: #fff;
+            --accent-color: #00d4ff;
+        }
+        [data-theme="dark"] {
+            --bg-color: #1a1a1a;
+            --text-color: #e0e0e0;
+            --card-bg: #2a2a2a;
+            --card-shadow: rgba(0,0,0,0.3);
+            --nav-bg: #111;
+            --nav-text: #e0e0e0;
+            --hero-bg: #004085;
+            --hero-text: #e0e0e0;
+            --button-bg: #0056b3;
+            --button-hover: #003d7a;
+            --link-bg: #3a3a3a;
+            --link-hover: #4a4a4a;
+            --footer-bg: #111;
+            --footer-text: #e0e0e0;
+            --accent-color: #66b0ff;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.5; color: var(--text-color); background: var(--bg-color); transition: all 0.3s ease; }
+        a { text-decoration: none; color: inherit; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 1rem; }
+        nav { background: var(--nav-bg); position: sticky; top: 0; z-index: 100; }
+        nav ul { display: flex; justify-content: center; align-items: center; list-style: none; padding: 0.8rem 0; }
+        nav a { color: var(--nav-text); font-weight: 500; padding: 0.4rem 0.8rem; font-size: 0.9rem; transition: background 0.3s; }
+        nav a:hover { background: #444; border-radius: 4px; }
+        .theme-toggle { background: none; border: none; color: var(--nav-text); font-size: 1.2rem; cursor: pointer; padding: 0.4rem 0.8rem; }
+        .hero { background: var(--hero-bg); color: var(--hero-text); text-align: center; padding: 1.5rem 1rem; }
+        .hero img { width: 60px; height: 60px; border-radius: 50%; margin-bottom: 0.5rem; border: 2px solid var(--hero-text); }
+        .hero h1 { font-size: 1.8rem; margin: 0; }
+        .hero p { font-size: 0.9rem; margin: 0.5rem 0; }
+        .section { padding: 1.5rem 0; }
+        .section h2 { font-size: 1.6rem; text-align: center; margin-bottom: 1rem; color: var(--text-color); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
+        .card { background: var(--card-bg); border-radius: 10px; overflow: hidden; box-shadow: 0 3px 8px var(--card-shadow); transition: transform 0.3s; }
+        .card:hover { transform: translateY(-4px); }
+        .card img { width: 100%; height: 150px; object-fit: cover; }
+        .card-content { padding: 0.8rem; }
+        .card h3 { font-size: 1.1rem; margin-bottom: 0.4rem; }
+        .card p { font-size: 0.85rem; color: var(--text-color); line-height: 1.3; margin-bottom: 0.5rem; opacity: 0.8; }
+        .button { display: inline-block; background: var(--button-bg); color: var(--hero-text); padding: 0.4rem 0.8rem; border-radius: 5px; font-size: 0.85rem; font-weight: 500; transition: background 0.3s; }
+        .button:hover { background: var(--button-hover); }
+        .social { text-align: center; margin: 1rem 0; }
+        .social a { font-size: 1.5rem; margin: 0 0.5rem; color: var(--text-color); transition: color 0.3s; }
+        .social a:hover { color: var(--button-bg); }
+        .quick-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin: 1rem 0; }
+        .quick-links a { background: var(--link-bg); padding: 0.4rem 0.8rem; border-radius: 5px; font-size: 0.85rem; color: var(--text-color); }
+        .quick-links a:hover { background: var(--link-hover); }
+        footer { background: var(--footer-bg); color: var(--footer-text); text-align: center; padding: 1rem 0; font-size: 0.85rem; }
+        footer a { color: var(--accent-color); }
+        @media (max-width: 768px) {
+            .hero img { width: 50px; height: 50px; }
+            .hero h1 { font-size: 1.5rem; }
+            .hero p { font-size: 0.8rem; }
+            nav ul { flex-wrap: wrap; justify-content: center; }
+            nav a, .theme-toggle { font-size: 0.8rem; padding: 0.4rem 0.6rem; }
+            .section h2 { font-size: 1.4rem; }
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul class="container">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#blogs">Blogs</a></li>
+            <li><a href="#videos">Videos</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#upcoming">Upcoming</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><button class="theme-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button></li>
+        </ul>
+    </nav>
 
-	</head>
-	<body class="is-preload">
+    <!-- Hero Section (With Small Icon) -->
+    <section id="home" class="hero">
+        <div class="container">
+            <img src="images/cv_for_instagram_profile.jpg" alt="cv_for_everyone profile" />
+            <h1>cv_for_everyone</h1>
+            <p>Computer vision insights, tutorials, and news.</p>
+            <div class="quick-links">
+                <a href="https://www.instagram.com/cv_for_everyone/?hl=en">Follow on Instagram</a>
+                <a href="#blogs">Latest Blogs</a>
+                <a href="#videos">New Videos</a>
+                <a href="#news">CV News</a>
+            </div>
+        </div>
+    </section>
 
-		<!-- Nav -->
-			<nav id="nav">
-				<ul class="container">
-					<li><a href="#top">Top</a></li>
-					<li><a href="#About">About</a></li>
-					<li><a href="#Projects">Projects</a></li>
-					<li><a href="#Author">Who's behind this?</a></li>
-					<li><a href="#contact">Contact</a></li>
-				</ul>
-			</nav>
-
-		<!-- Home -->
-			<article id="top" class="wrapper style1">
-				<div class="container">
-					<div class="row">
-						<div class="col-4 col-5-large col-12-medium">
-							<span class="image fit"><img src="images/cv_for_instagram_profile.jpg" alt="" /></span>
-						</div>
-						<div class="col-8 col-7-large col-12-medium">
-							<header>
-								<p>Welcome to,</p>
-								<h2><strong>Computer Vision for Everyone</strong></h2>
-							</header>
-							<p>This corner is for sharing my experience with computer vision, Which includes news,knowledge,courses,blogs, tutorials and so much more.</p>
-							<a href="#About" class="button large scrolly">Learn more about cv_for_everyone</a>
-						</div>
+    <!-- Blogs Section -->
+	<section id="blogs" class="section">
+		<div class="container">
+			<h2>Latest Blogs</h2>
+			<div class="grid">
+				<div class="card">
+					<img src="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg" alt="YOLOv8 Blog" />
+					<div class="card-content">
+						<h3>Real-Time Object Detection with YOLOv8</h3>
+						<p>Step-by-step guide to implement YOLOv8 for fast, accurate detection.</p>
+						<a href="https://cvforeveryone28.blogspot.com/" class="button">Read Blog</a>
 					</div>
 				</div>
-			</article>
-
-		<!-- About -->
-			<article id="About" class="wrapper style2">
-				<div class="container">
-					<header>
-						<h2>cv_for_everyone is all about</h2>
-						<p>Main focus of this space is on computer vision, but sometimes its required to dive into theory of Image Processing,Machine learning,Deep Learning and sometimes even mathematical understanding of how computer vision works at low level.</p>
-						<p>Low level concepts such as hardware understanding on which we are running cv(computer vision) algorithms, Linear Algebra, Differentiation etc.</p>
-					</header>
-					<div class="row aln-center">
-						<div class="col-3 col-6-medium col-12-small">
-							<section class="box style1">
-								<!-- <span class="icon featured fa-eye"></span> -->
-								<i class="icon-color-user-settings icofont-instagram icofont-9x"></i>
-								<h3><a href="https://www.instagram.com/cv_for_everyone/?hl=en">cv_for_everyone</a></h3>
-								<p>Official Instagram handle where most of the announcement happens</p>
-							</section>
-						</div>
-						<div class="col-3 col-6-medium col-12-small">
-							<section class="box style1">
-								<!-- <span class="icon featured internet-explorer"></span> -->
-								<i class="icon-color-user-settings icofont-education icofont-9x"></i>
-								<h3>Courses</h3>
-								<p>Courses such as Advanced Computer Vision using OpenCV Python</p>
-							</section>
-						</div>
-						<div class="col-3 col-6-medium col-12-small">
-							<section class="box style1">
-								<!-- <span class="icon featured internet-explorer"></span> -->
-								<i class="icon-color-user-settings icofont-blogger icofont-9x"></i>
-								<h3>Blogging</h3>
-								<p>This section might include unimplemented ideas(concepts)</p>
-							</section>
-						</div>
+				<div class="card">
+					<img src="https://images.pexels.com/photos/1181359/pexels-photo-1181359.jpeg" alt="Segmentation Blog" />
+					<div class="card-content">
+						<h3>Mastering Image Segmentation</h3>
+						<p>Learn semantic and instance segmentation with practical code.</p>
+						<a href="https://cvforeveryone28.blogspot.com/" class="button">Read Blog</a>
 					</div>
-					<footer>
-						<p><strong>Links for the courses and blogs will be available soon...</strong></p>
-						<a href="#Projects" class="button large scrolly">Checkout my recent work</a>
-					</footer>
 				</div>
-			</article>
-
-		<!-- Portfolio -->
-			<article id="Projects" class="wrapper style3">
-				<div class="container">
-					<header>
-						<h2>Some stuff that I'm proud to showcase</h2>
-						<p>Projects that I persued with my willingness, dedication and urge to do something new.</p>
-					</header>
-					<div class="row">
-
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="https://github.com/ajaymin28/face-detection-zoo" class="image featured"><img height="250rem" src="images/project/dadas/sleepy_face.png" alt="" /></a>
-								<a href="https://github.com/ajaymin28/face-detection-zoo"><h3>Face Detection Zoo</h3></a>
-								<!-- <i class="icon-color-user-settings icofont-star icofont-1x"></i> -->
-								<p>Different Face Detection Algorithms</p>
-							</article>
-						</div>
-
-
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="https://github.com/ajaymin28/FlashCardApp/" class="image featured"><img height="250rem" src="images/project/flashcardapp/wordview.PNG" alt="" /></a>
-								<a href="https://github.com/ajaymin28/FlashCardApp/"><h3>FlashCardApp</h3></a>
-								<!-- <i class="icon-color-user-settings icofont-star icofont-1x"></i> -->
-								<p>ReactJS/NodeJs based FlashCard App.</p>
-							</article>
-						</div>
-
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img height="250rem" src="images/pic01.jpg" alt="" /></a>
-								<h3>Aruco Markers</h3>
-								<!-- <i class="icon-color-user-settings icofont-star icofont-1x"></i> -->
-								<p>Aruco Markers based Augmented Reality application</p>
-							</article>
-						</div>
-
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img height="250rem" src="images/pic02.jpg" alt="" /></a>
-								<h3>Edge Computation/Robotics</h3>
-								<!-- <i class="icon-color-user-settings icofont-star icofont-1x"></i> -->
-								<p>Computer Vision in field of Robotics</p>
-							</article>
-						</div>
-
+				<div class="card">
+					<img src="https://images.pexels.com/photos/3861976/pexels-photo-3861976.jpeg" alt="Edge Computing Blog" />
+					<div class="card-content">
+						<h3>Edge Computing for Vision</h3>
+						<p>Optimize CV algorithms for low-power devices like Raspberry Pi.</p>
+						<a href="https://cvforeveryone28.blogspot.com/" class="button">Read Blog</a>
 					</div>
-
-					<div class="row">
-
-						
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img height="250rem" src="images/pic03.jpg" alt="" /></a>
-								<h3>Best practices for python opencv</h3>
-								<!-- <i class="icon-color-user-settings icofont-star icofont-1x"></i> -->
-								<p>Git repo code, for effective code writing for opencv python</p>
-							</article>
-						</div>
-
-
-					</div>
-					<footer>
-						<!-- <p>I'm planning to persue my masters in computer vision in 2022-23. And  I'm looking for professor/mentor to guide me on this journey!!</p> -->
-						<a href="#contact" class="button large scrolly">Connect with me</a>
-					</footer>
 				</div>
-			</article>
+			</div>
+		</div>
+	</section>
 
-			<article id="Author" class="wrapper style3">
-
-				<div class="container">
-					<header>
-						<h2>Who's behind this?</h2>
-					</header>
-					<div class="row">
-
-						<div class="col-4 col-6-medium col-12-small">
-						</div>
-
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="https://github.com/ajaymin28" class="image featured"><img src="https://github.com/ajaymin28.png?size=720" alt="" /></a>
-								<h3><a href="https://github.com/ajaymin28">Jaimin Bhoi</a></h3>
-								<!-- <p>Brief</p> -->
-							</article>
-						</div>
-
-						<div class="col-4 col-6-medium col-12-small">
-						</div>
-
+    <!-- Videos Section -->
+	<section id="videos" class="section">
+		<div class="container">
+			<h2>New YouTube Videos</h2>
+			<div class="grid">
+				<div class="card">
+					<img src="https://images.pexels.com/photos/1181298/pexels-photo-1181298.jpeg" alt="OpenCV Video" />
+					<div class="card-content">
+						<h3>OpenCV Crash Course</h3>
+						<p>Master OpenCV Python basics in just 30 minutes.</p>
+						<a href="https://www.youtube.com/user/ajaymin28" class="button">Watch Now</a>
 					</div>
-					<footer>
-						<p>I work in Innovation lab @TATA Consulatancy Services which focuses on Image/Video Analytics.</p>
-					</footer>
 				</div>
-			</article>
-
-		<!-- Contact -->
-			<article id="contact" class="wrapper style4">
-				<div class="container medium">
-					<header>
-						<h2>Connect with me</h2>
-						<p>ajaymin28 at gmail.com</p>
-						<p>I'm mostly active on LinkedIn, check below links to reach me.</p>
-					</header>
-					<div class="row">
-						<!-- <div class="col-12">
-							<form method="post" action="#">
-								<div class="row">
-									<div class="col-6 col-12-small">
-										<input type="text" name="name" id="name" placeholder="Name" />
-									</div>
-									<div class="col-6 col-12-small">
-										<input type="text" name="email" id="email" placeholder="Email" />
-									</div>
-									<div class="col-12">
-										<input type="text" name="subject" id="subject" placeholder="Subject" />
-									</div>
-									<div class="col-12">
-										<textarea name="message" id="message" placeholder="Message"></textarea>
-									</div>
-									<div class="col-12">
-										<ul class="actions">
-											<li><input type="submit" value="Send Message" /></li>
-											<li><input type="reset" value="Clear Form" class="alt" /></li>
-										</ul>
-									</div>
-								</div>
-							</form>
-						</div> -->
-						<div class="col-12">
-							<hr />
-							<h3>Find me on ...</h3>
-							<ul class="social">
-								<!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li> -->
-								<!-- <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li> -->
-								<!-- <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li> -->
-								<li><a href="https://in.linkedin.com/in/ajaymin28" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-								<li><a href="https://github.com/ajaymin28" class="icon brands fa-github"><span class="label">Github</span></a></li>
-								<li><a href="https://www.instagram.com/cv_for_everyone/?hl=en" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-								<li><a href="https://cvforeveryone28.blogspot.com/" class="icon brands fa-blogger"><span class="label">Blogger</span></a></li>
-								<li><a href="https://www.youtube.com/user/ajaymin28" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
-								<!-- <li><a href="#" class="icon brands fa-tumblr"><span class="label">Tumblr</span></a></li>
-								<li><a href="#" class="icon brands fa-google-plus"><span class="label">Google+</span></a></li> -->
-								<!--
-								<li><a href="#" class="icon solid fa-rss"><span>RSS</span></a></li>
-								<li><a href="#" class="icon brands fa-instagram"><span>Instagram</span></a></li>
-								<li><a href="#" class="icon brands fa-foursquare"><span>Foursquare</span></a></li>
-								<li><a href="#" class="icon brands fa-skype"><span>Skype</span></a></li>
-								<li><a href="#" class="icon brands fa-soundcloud"><span>Soundcloud</span></a></li>
-								<li><a href="#" class="icon brands fa-youtube"><span>YouTube</span></a></li>
-								<li><a href="#" class="icon brands fa-blogger"><span>Blogger</span></a></li>
-								<li><a href="#" class="icon brands fa-flickr"><span>Flickr</span></a></li>
-								<li><a href="#" class="icon brands fa-vimeo"><span>Vimeo</span></a></li>
-								-->
-							</ul>
-							<hr />
-						</div>
+				<div class="card">
+					<img src="https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg" alt="Face Recognition Video" />
+					<div class="card-content">
+						<h3>Build a Face Recognition App</h3>
+						<p>Create a real-time face recognition system from scratch.</p>
+						<a href="https://www.youtube.com/user/ajaymin28" class="button">Watch Now</a>
 					</div>
-					<footer>
-						<ul id="copyright">
-							<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-						</ul>
-					</footer>
 				</div>
-			</article>
+				<div class="card">
+					<img src="https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg" alt="Neural Networks Video" />
+					<div class="card-content">
+						<h3>Neural Networks 101</h3>
+						<p>Understand CNNs and their role in computer vision.</p>
+						<a href="https://www.youtube.com/user/ajaymin28" class="button">Watch Now</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+    <!-- News Section -->
+    <section id="news" class="section">
+        <div class="container">
+            <h2>Computer Vision News</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-content">
+                        <h3>OpenCV 5.0 Released</h3>
+                        <p>Enhanced DNN support and performance improvements.</p>
+                        <a href="#" class="button">Read More</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <h3>3D Vision Breakthrough</h3>
+                        <p>New model improves real-time 3D reconstruction accuracy.</p>
+                        <a href="#" class="button">Read More</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <h3>CVPR 2025 Preview</h3>
+                        <p>Top papers to watch at the upcoming CV conference.</p>
+                        <a href="#" class="button">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-	</body>
+    <!-- Upcoming Content Section -->
+    <section id="upcoming" class="section">
+        <div class="container">
+            <h2>Upcoming Content</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Course: Advanced GANs</h3>
+                        <p>Build generative models for image synthesis.</p>
+                        <p><strong>May 2025</strong></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Video: AR with Unity</h3>
+                        <p>Create augmented reality apps with CV.</p>
+                        <p><strong>June 2025</strong></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Blog: Vision Transformers</h3>
+                        <p>Explore ViTs for image classification.</p>
+                        <p><strong>April 2025</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Contact</h2>
+            <div class="social">
+                <a href="https://www.instagram.com/cv_for_everyone/?hl=en" class="fab fa-instagram"></a>
+                <a href="https://in.linkedin.com/in/ajaymin28" class="fab fa-linkedin-in"></a>
+                <a href="https://github.com/ajaymin28" class="fab fa-github"></a>
+                <a href="https://www.youtube.com/user/ajaymin28" class="fab fa-youtube"></a>
+                <a href="https://cvforeveryone28.blogspot.com/" class="fab fa-blogger"></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2025 cv_for_everyone. Design inspired by <a href="http://html5up.net">HTML5 UP</a>.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        const toggleButton = document.querySelector('.theme-toggle');
+        const body = document.body;
+        const icon = toggleButton.querySelector('i');
+
+		localStorage.setItem('theme', 'dark');
+
+        // Load saved theme from localStorage
+        if (localStorage.getItem('theme') === 'dark') {
+            body.setAttribute('data-theme', 'dark');
+            icon.classList.replace('fa-moon', 'fa-sun');
+        }
+
+        toggleButton.addEventListener('click', () => {
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.removeAttribute('data-theme');
+                icon.classList.replace('fa-sun', 'fa-moon');
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                icon.classList.replace('fa-moon', 'fa-sun');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+    </script>
+</body>
 </html>
