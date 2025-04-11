@@ -1,373 +1,314 @@
-<!DOCTYPE HTML>
-<!--
-	Miniport by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Portfolio of Jaimin Bhoi</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="assets/css/user-style.css" />
-		<!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
-		<link rel="stylesheet" href="assets/css/icofont/icofont.css" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Jaimin Bhoi, a Computer Vision Engineer specializing in EEG signal research, deep learning, and image processing.">
+    <meta name="keywords" content="computer vision, deep learning, EEG research, image processing, Jaimin Bhoi">
+    <meta name="author" content="Jaimin Bhoi">
+    <title>Jaimin Bhoi | Computer Vision Engineer</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- AOS for Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #1f2937;
+        }
+        .navbar {
+            background: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary {
+            background: #4a6cf7;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(74, 108, 247, 0.3);
+        }
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        .skill-badge {
+            background: #e1e7ff;
+            color: #4a6cf7;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+        }
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            color: #4a6cf7;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        .social-link:hover {
+            background-color: #4a6cf7;
+            color: #ffffff;
+            transform: translateY(-5px);
+        }
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: #4a6cf7;
+            z-index: 1000;
+            transition: width 0.2s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
 
-	</head>
-	<body class="is-preload">
+    <!-- Navbar -->
+    <nav class="navbar fixed top-0 w-full z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#home" class="text-2xl font-bold text-gray-800">Jaimin Bhoi</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#home" class="text-gray-600 hover:text-blue-500">Home</a>
+                <a href="#skills" class="text-gray-600 hover:text-blue-500">Skills</a>
+                <a href="#projects" class="text-gray-600 hover:text-blue-500">Projects</a>
+                <a href="#experience" class="text-gray-600 hover:text-blue-500">Experience</a>
+                <a href="#research" class="text-gray-600 hover:text-blue-500">Research</a>
+                <a href="#connect" class="text-gray-600 hover:text-blue-500">Connect</a>
+            </div>
+            <button class="md:hidden text-gray-600" x-data="{ open: false }" @click="open = !open">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+        <div x-show="open" class="md:hidden bg-white p-4">
+            <a href="#home" class="block py-2 text-gray-600 hover:text-blue-500">Home</a>
+            <a href="#skills" class="block py-2 text-gray-600 hover:text-blue-500">Skills</a>
+            <a href="#projects" class="block py-2 text-gray-600 hover:text-blue-500">Projects</a>
+            <a href="#experience" class="block py-2 text-gray-600 hover:text-blue-500">Experience</a>
+            <a href="#research" class="block py-2 text-gray-600 hover:text-blue-500">Research</a>
+            <a href="#connect" class="block py-2 text-gray-600 hover:text-blue-500">Connect</a>
+        </div>
+    </nav>
 
-		<!-- Nav -->
-			<nav id="nav">
-				<ul class="container">
-					<li><a href="#top">Top</a></li>
-					<li><a href="#work">Work</a></li>
-					<li><a href="#portfolio">Projects/Portfolio</a></li>
-					<li><a href="#contact">Contact</a></li>
-				</ul>
-			</nav>
+    <!-- Hero Section -->
+    <section id="home" class="pt-24 pb-12 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4" data-aos="fade-up">Computer Vision Engineer</h1>
+            <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-6" data-aos="fade-up" data-aos-delay="100">
+                With over 5+ years of industry experience. Pursuing MS in computer vision at UCF (graduating in May-2025).
+            </p>
+            <div class="flex flex-wrap justify-center gap-3 mb-8" data-aos="fade-up" data-aos-delay="200">
+                <span class="skill-badge">VLMs</span>
+				<span class="skill-badge">Computer Vision</span>
+                <span class="skill-badge">Deep Learning</span>
+                <span class="skill-badge">Research</span>
+                <span class="skill-badge">Image Processing</span>
+                <span class="skill-badge">Azure Cloud</span>
+				<span class="skill-badge">HPC</span>
+				<span class="skill-badge">ML Ops</span>
+            </div>
+            <div class="flex justify-center gap-4" data-aos="fade-up" data-aos-delay="300">
+                <a href="#projects" class="btn-primary text-white px-6 py-3 rounded-md font-medium">View My Work</a>
+                <a href="./cv/JaiminCV.pdf" class="btn-primary text-white px-6 py-3 rounded-md font-medium bg-gray-600 hover:bg-gray-700">Download CV</a>
+            </div>
+        </div>
+    </section>
 
-		<!-- Home -->
-			<article id="top" class="wrapper style1">
-				<div class="container">
-					<div class="row">
-						<div class="col-4 col-5-large col-12-medium">
-							<span class="image fit"><img src="https://github.com/ajaymin28.png?size=720" alt="" /></span>
-						</div>
-						<div class="col-8 col-7-large col-12-medium">
-							<header>
-								<h1>Hi. I'm <strong>Jaimin Bhoi</strong></h1>
-							</header>
-							<p><strong>MS in Computer Vision</strong> @University of Central Florida</br> 
-							Computer Vision, Image Processing, ML/DL, Azure Cloud. </br> 
-							Graduating in May 2025. </br> Looking for full time opportunities in USA.</p>
-							
-							<a href="#work" class="button large scrolly">Learn more about me</a> <a href="./cv/JaiminCV.pdf" class="button large">Get my Resume</a>
-							
-						</div>
-					</div>
-				</div>
-			</article>
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-10" data-aos="fade-up">What I Bring to the Table</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="p-6 bg-white rounded-lg shadow-sm text-center" data-aos="fade-up">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Cutting Edge CV</h3>
+                    <p class="text-gray-600">Expertise in MLLMs, training, finetuning LLMs, stable diffusion models, LoRA</p>
+                </div>
 
+				<div class="p-6 bg-white rounded-lg shadow-sm text-center" data-aos="fade-up">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Classical Computer Vision</h3>
+                    <p class="text-gray-600">Expertise in object detection, image segmentation, and facial recognition using OpenCV and YOLO.</p>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-sm text-center" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Deep Learning</h3>
+                    <p class="text-gray-600">Proficient in CNN and RNN architectures with TensorFlow and PyTorch for real-world applications.</p>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-sm text-center" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Research</h3>
+                    <p class="text-gray-600">During my master's, I gained hands-on experience applying research methodologies, exploring novel ideas, and leveraging HPC resources to train/eval large-scale models.</p>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-sm text-center" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Image Processing</h3>
+                    <p class="text-gray-600">Skilled in classical techniques for enhancement, restoration, and feature extraction.</p>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-sm text-center" data-aos="fade-up" data-aos-delay="400">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Azure Cloud</h3>
+                    <p class="text-gray-600">Experience deploying ML models and APIs using Azure AI and Cognitive Services.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Projects Section -->
+    <section id="projects" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-10" data-aos="fade-up">Projects That Define My Expertise</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-sm" data-aos="fade-up">
+                    <img src="images/project/cvsys_retaileye/RetailEyeProjectPoster.png" alt="Retail Analytics System" class="w-full h-40 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Retail Analytics System</h3>
+                        <p class="text-gray-600 mb-4">Built a real-time customer behavior analysis system using YOLO and OpenCV, improving store efficiency by 20%.</p>
+                        <a href="#" class="text-blue-500 hover:underline font-medium">View Details</a>
+                    </div>
+                </div>
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-sm" data-aos="fade-up" data-aos-delay="100">
+                    <img src="images/project/research_eeg/0_raw_eeg_channel_71.png" alt="EEG Visualization" class="w-full h-40 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">EEG Visual Stimuli</h3>
+                        <p class="text-gray-600 mb-4">EEG research is my passion. I'm resrarching how we can interpret our brain singals that can read our thoughts and visulize our dreams. I have developed algorithms to convert EEG signals into visual representations for brain-computer interfaces.</p>
+                        <a href="#" class="text-blue-500 hover:underline font-medium">View Details</a>
+                    </div>
+                </div>
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-sm" data-aos="fade-up" data-aos-delay="200">
+                    <img src="images/project/dadas/sleepy_face.png" alt="Security System" class="w-full h-40 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Drunk and Drowsiness Alert System(DADAS)</h3>
+                        <p class="text-gray-600 mb-4">Implemented a drunk and drowsiness alert system for long route drivers for monitoring and safety purposes.</p>
+                        <a href="#" class="text-blue-500 hover:underline font-medium">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-8" data-aos="fade-up" data-aos-delay="300">
+                <a href="#connect" class="btn-primary text-white px-6 py-3 rounded-md font-medium">Discuss a Project</a>
+            </div>
+        </div>
+    </section>
 
-			<article id="work" class="wrapper style1">
-				<div class="container">
+    <!-- Experience Section -->
+    <section id="experience" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-10" data-aos="fade-up">Professional Experience</h2>
+            <div class="max-w-3xl mx-auto space-y-8">
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-xl font-semibold text-gray-800">Research Assistant</h3>
+                    <p class="text-gray-600">Center for research in computer vision @UCF | May 2024 - Jan 2025</p>
+                    <p class="text-gray-600">Neurosymbolic AI based approach to generate Dynamic Scene Graph from videos using Off-the-shelf MLLMS(Multi-Modal Large Language Models)</p>
+                </div>
+				<div data-aos="fade-up">
+                    <h3 class="text-xl font-semibold text-gray-800">Individual Contributor</h3>
+                    <p class="text-gray-600">UCF College of Medicine | Dec 2023 - Apr 2024</p>
+                    <p class="text-gray-600">Designed CV algorithm to perform angle measurement of MRI data(DICOMs) for the bone alignment using Segment Anything Model(SAM) + Image Classifier Heads </p>
+                </div>
+				<div data-aos="fade-up">
+                    <h3 class="text-xl font-semibold text-gray-800">Systems Engineer</h3>
+                    <p class="text-gray-600">Tata Consultancy Services(TCS) | June 2018 - June 2023</p>
+                    <p class="text-gray-600">Over my five years at TCS, I had the opportunity to take on diverse roles and contribute to various projects, including leading a team of two in developing computer vision solutions. This experience laid a strong foundation in software engineering and corporate best practices, while also exposing me to real-world challenges in computer vision.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-					<header>
-						<h1>Patents and Publications</h1>
-					</header>
-	
-					<div class="row aln-center">
+	<!-- Academics Section -->
+    <section id="academics" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-10" data-aos="fade-up">Academics</h2>
+            <div class="max-w-3xl mx-auto space-y-8">
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-xl font-semibold text-gray-800">Master's in Computer Vision</h3>
+                    <p class="text-gray-600">University of Central Florida | August 2023 - May 2025</p>
+                    <p class="text-gray-600">Focused on advanced computer vision techniques and emerging research, bridging theory with real-world applications.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-						<div class="col-6 col-6-medium col-12-small">
-							<section class="box style1">
-								<!-- <span class="icon featured fa-eye"></span> -->
-								<i class="icon-color-user-settings icofont-paper icofont-3x"></i>
-								<h4>Current Research</h4>
-								<!-- <h2>1</h2> -->
-								<p>My current research focuses on exploring Electroencephalography (EEG) signals to enhance understanding of the human brain. The study aims to investigate the intricacies of EEG signals and their correlation with cognitive processes. Additionally, the research involves the application of computer vision techniques to convert these EEG signals into visual representations. By merging neuroscience and computer vision, the study seeks to bridge the gap between brain activity and visual interpretation, opening avenues for advanced brain-computer interface technologies and improved insights into cognitive functions.</p>
-								<!-- <ul>
-									<li></li>
-								</ul> -->
-							</section>
-						</div>
+    <!-- Research Section -->
+    <section id="research" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-10" data-aos="fade-up">Cutting-Edge Research</h2>
+            <div class="max-w-3xl mx-auto" data-aos="fade-up">
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">What can off-the-shelf MLLMs do for Dynamic Scene Graph Generation?</h3>
+                <p class="text-gray-600">Proposed a novel approach for dynamic scene graph generation using off-the-shelf multi-modal large language models (MLLMs), outperforming state-of-the-art methods at Top-1, Top-5, and Top-10 accuracy while effectively balancing the precision-recall tradeoff.</p>
+            </div>
 
-						<div class="col-6 col-6-medium col-12-small">
-							<section class="box style1">
-								<!-- <span class="icon featured fa-eye"></span> -->
-								<i class="icon-color-user-settings icofont-certificate icofont-3x"></i>
-								<h4>Patents & Publications</h4>
-								<!-- <h2>2</h2> -->
-								<ol>
-									<li>Aerial Video Analytics based dynamic Non-linear distance measurement between on-ground objects <b>(2022- Indian Patent, status: filed)</b></li>
-									<li>Method and system to detect a text from multimedia content captured at a scene. <b>(2022- Indian Patent, status: filed)</b></li>
-									<li>An Efficient Ensemble-based Deep Learning Model for The Diagnosis of Cervical Cancer <b>(ISCAIE-2022)</b></li>
-								</ol>
-							</section>
-						</div>
+			<div class="max-w-3xl mx-auto" data-aos="fade-up">
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">EEG Signal Analysis & Visualization</h3>
+                <p class="text-gray-600">Developing novel algorithms to transform brain activity into actionable visual data, with applications in neuroscience and human-computer interaction.</p>
+            </div>
+        </div>
+    </section>
 
+    <!-- Connect Section -->
+    <section id="connect" class="py-16 bg-gray-50"> 
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-10" data-aos="fade-up">Let's Connect</h2> <div class="max-w-lg mx-auto">
+                <p class="text-center text-gray-600 mb-6" data-aos="fade-up">I'm open to opportunities and collaborations in computer vision and AI. Reach out to discuss ideas or projects!</p>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <a href="mailto:ajaymin28@gmail.com" class="btn-primary text-white px-6 py-3 rounded-md font-medium">Send Me an Email</a>
+                </div>
+                <div class="flex justify-center flex-wrap gap-4 mt-6" data-aos="fade-up" data-aos-delay="200">
+                    <a href="https://linkedin.com/in/jaiminbhoi" class="social-link" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+                    <a href="https://github.com/ajaymin28" class="social-link" aria-label="GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-					</div>
+    <!-- Footer -->
+    <footer class="py-6 bg-gray-800 text-white text-center">
+        <p>© 2025 Jaimin Bhoi. All rights reserved.</p>
+    </footer>
 
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800 });
 
-					<footer>
-						
-					</footer>
+        // Scroll Progress
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercentage = (scrollTop / scrollHeight) * 100;
+            document.getElementById('scrollProgress').style.width = `${scrollPercentage}%`;
+        });
 
-				</div>
-
-			</article>
-			
-
-
-
-		<!-- Work -->
-			<article id="work" class="wrapper style2">
-				<div class="container">
-					<header>
-						<h2>Here's all the stuff I do.</h2>
-						<p>Currently I'm pursuing my <b>Master's in computer vision from University of Central Florida, and expecting my graduation in May-2025</b></p></br>
-						<p>Software development and Research. I work with IP code, help creating IP code for the company, which includes filing patents and publishing research papers on behalf of my organization.</p>
-					</header>
-					<div class="row aln-center">
-						<div class="col-3 col-6-medium col-12-small">
-							<section class="box style1">
-								<!-- <span class="icon featured fa-eye"></span> -->
-								<i class="icon-color-user-settings icofont-eye icofont-9x"></i>
-								<h3>Computer Vision</h3>
-								<p>Inventing new algorithms, building solutions, Research</p>
-							</section>
-						</div>
-						<div class="col-3 col-6-medium col-12-small">
-							<section class="box style1">
-								<!-- <span class="icon solid featured fa-cloud"></span> -->
-								<i class="icon-color-user-settings icofont-cloudapp icofont-9x"></i>
-								<h3>Cloud</h3>
-								<p>Using Azure cloud services to deploy AI/ML models, exposing APIs</p>
-							</section>
-						</div>
-						<div class="col-3 col-6-medium col-12-small">
-							<section class="box style1">
-								<!-- <span class="icon featured internet-explorer"></span> -->
-								<i class="icon-color-user-settings icofont-dashboard-web icofont-9x"></i>
-								<h3>Website development</h3>
-								<p>Bootstrap,JS,HTML,ReactJs <br>Flask,NodeJs</p>
-							</section>
-						</div>
-						<div class="col-3 col-6-medium col-12-small">
-							<section class="box style1">
-								<!-- <span class="icon featured internet-explorer"></span> -->
-								<i class="icon-color-user-settings icofont-blogger icofont-9x"></i>
-								<h3>Blogging</h3>
-								<p>Here I  try to express my ideas & thoughts through blogging</p>
-							</section>
-						</div>
-					</div>
-
-					<footer>
-						<p>On my way to make computers do great things.</p>
-						<a href="#portfolio" class="button large scrolly">Checkout my recent work</a>
-					</footer>
-
-				
-				</div>
-			</article>
-
-		<!-- Portfolio -->
-			<article id="portfolio" class="wrapper style3">
-				<div class="container">
-					<header>
-						<h2>Some stuff that I'm proud to showcase</h2>
-						<p>Projects that I persued with my willingness, dedication and urge to do something new.</p>
-					</header>
-					<div class="row">
-
-
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/project/research_eeg/0_raw_eeg_channel_71.png" alt="" width="100rem" height="250rem"/></a>
-								<h3><a href="https://github.com/ajaymin28/EEGVis">EEG Vis </br>(Current Research)</a></h3>
-								<p>Researching EEG singals to generate what our human mind is imagining, seeing dreams, hearing thoughts, deal with disabilities and Efficient training</p>
-							</article>
-						</div>
-
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/project/cvsys_retaileye/RetailEyeProjectPoster.png" alt="" width="100rem" height="250rem"/></a>
-								<h3><a href="https://github.com/ajaymin28/RetailEye">RetailEye (2023)</a></h3>
-								<p>Self Checkout Theft Prevention, Ported solution on Jetson Xavier</p>
-							</article>
-						</div>
-						
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/project/cv_har_clip/ViT_Image_803_a women eating food on the table.jpg" alt="" width="100rem" height="250rem"/></a>
-								<h3><a href="https://github.com/ajaymin28/HumanActionRecognition">Human Action Recognition(HAR) on static images (2023)</a></h3>
-								<p>CLIP model based text to image alignment, fintuning CLIP</p>
-							</article>
-						</div>
-
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/project/work/container-image-analytics.jpg" alt="" /></a>
-								<h3><a href="#">Ship Container Image Analytics (2021-23)</a></h3>
-								<p>Detection of Damage, Cleaniness, Lock etc.</p>
-							</article>
-						</div>
-
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img height="250rem" src="images/project/dadas/sleepy_face.png" alt="" /></a>
-								<h3><a href="dadas.html">DADAS</a> <i class="icon-color-user-settings icofont-star icofont-1x"></i> </h3>
-								<p>Drunk and Drowsiness Alert System using Deep Learning & Image Processing.</p>
-							</article>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/project/robotics/robotics_components.JPG" alt="" /></a>
-								<h3><a href="robotics.html">Robotics</a></h3>
-								<p>I love programming hardware to make them do some cool stuff.</p>
-							</article>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
-								<h3><a href="#">Autonomous Parking</a></h3>
-								<p>Image Processing algorithm for autnomous parking.</p>
-							</article>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="https://github.com/ajaymin28/face-detection-zoo" class="image featured"><img height="250rem" src="images/project/dadas/sleepy_face.png" alt="" /></a>
-								<h3><a href="https://github.com/ajaymin28/face-detection-zoo">Face Applications</a></h3>
-								<p>face detection, recognition, face features, face clustering</p>
-							</article>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
-								<h3><a href="#">Aruco markers(AR)</a></h3>
-								<p>Aruco Marker based AR Application(rendering 3D objects)</p>
-							</article>
-						</div>
-						
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/project/cvyoutubecourse/cvyoutubecourse.JPG" alt="" /></a>
-								<h3><a href="#">Computer Vision Course</a></h3>
-								<p>Learning & Sharing value which I learned from <strong>TCS</strong></p>
-							</article>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
-								<h3><a href="#">Machine Learning</a></h3>
-								<p>Some cool ML stuff which doesn't include computer vision.</p>
-							</article>
-						</div>
-					</div>
-					<footer>
-						<!-- <p>I'm planning to persue my masters in computer vision in 2022-23. And  I'm looking for professor/mentor to guide me on this journey!!</p> -->
-						<a href="#contact" class="button large scrolly">Connect with me</a>
-					</footer>
-				</div>
-			</article>
-
-			<article id="portfolio" class="wrapper style3">
-
-				<div class="container">
-					<header>
-						<h2>Some IP Solutions that I've worked on</h2>
-					</header>
-					<div class="row">
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/project/work/selfcheckout.jpg" alt="" /></a>
-								<h3><a href="#">Self-Checkout theft</a></h3>
-								<p>Computer Vision based self-checkout theft detection</p>
-							</article>
-						</div>
-
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/project/work/ticketswitch.jpg" alt="" /></a>
-								<h3><a href="#">Ticket Switch</a></h3>
-								<p>Computer Vision based theft detection for barcode switch for self-checkout</p>
-							</article>
-						</div>
-
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/project/work/persondetector.png" alt="" /></a>
-								<h3><a href="#">People Locator</a></h3>
-								<p>Computer Vision based customer locator, self-checkout queue count</p>
-							</article>
-						</div>
-
-					</div>
-
-				</div>
-
-			</article>
-
-		<!-- Contact -->
-			<article id="contact" class="wrapper style4">
-				<div class="container medium">
-					<header>
-						<h2>Connect with me</h2>
-						<p>ajaymin28 at gmail.com</p>
-						<p>I'm mostly active on LinkedIn, check below links to reach me.</p>
-					</header>
-					<div class="row">
-						<!-- <div class="col-12">
-							<form method="post" action="#">
-								<div class="row">
-									<div class="col-6 col-12-small">
-										<input type="text" name="name" id="name" placeholder="Name" />
-									</div>
-									<div class="col-6 col-12-small">
-										<input type="text" name="email" id="email" placeholder="Email" />
-									</div>
-									<div class="col-12">
-										<input type="text" name="subject" id="subject" placeholder="Subject" />
-									</div>
-									<div class="col-12">
-										<textarea name="message" id="message" placeholder="Message"></textarea>
-									</div>
-									<div class="col-12">
-										<ul class="actions">
-											<li><input type="submit" value="Send Message" /></li>
-											<li><input type="reset" value="Clear Form" class="alt" /></li>
-										</ul>
-									</div>
-								</div>
-							</form>
-						</div> -->
-						<div class="col-12">
-							<hr />
-							<h3>Find me on ...</h3>
-							<ul class="social">
-								<!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li> -->
-								<!-- <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li> -->
-								<!-- <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li> -->
-								<li><a href="https://in.linkedin.com/in/ajaymin28" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-								<li><a href="https://github.com/ajaymin28" class="icon brands fa-github"><span class="label">Github</span></a></li>
-								<li><a href="https://www.instagram.com/cv_for_everyone/?hl=en" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-								<li><a href="https://cvforeveryone28.blogspot.com/" class="icon brands fa-blogger"><span class="label">Blogger</span></a></li>
-								<li><a href="https://www.youtube.com/user/ajaymin28" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
-								<!-- <li><a href="#" class="icon brands fa-tumblr"><span class="label">Tumblr</span></a></li>
-								<li><a href="#" class="icon brands fa-google-plus"><span class="label">Google+</span></a></li> -->
-								<!--
-								<li><a href="#" class="icon solid fa-rss"><span>RSS</span></a></li>
-								<li><a href="#" class="icon brands fa-instagram"><span>Instagram</span></a></li>
-								<li><a href="#" class="icon brands fa-foursquare"><span>Foursquare</span></a></li>
-								<li><a href="#" class="icon brands fa-skype"><span>Skype</span></a></li>
-								<li><a href="#" class="icon brands fa-soundcloud"><span>Soundcloud</span></a></li>
-								<li><a href="#" class="icon brands fa-youtube"><span>YouTube</span></a></li>
-								<li><a href="#" class="icon brands fa-blogger"><span>Blogger</span></a></li>
-								<li><a href="#" class="icon brands fa-flickr"><span>Flickr</span></a></li>
-								<li><a href="#" class="icon brands fa-vimeo"><span>Vimeo</span></a></li>
-								-->
-							</ul>
-							<hr />
-						</div>
-					</div>
-					<footer>
-						<ul id="copyright">
-							<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-						</ul>
-					</footer>
-				</div>
-			</article>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
 </html>
